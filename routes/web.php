@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::redirect('/','blog');
+Auth::routes();
+Route::get('blog','App\Http\Controllers\Web\PageController@blog')->name('blog');
