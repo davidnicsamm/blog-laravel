@@ -21,3 +21,4 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/','blog');
 Auth::routes();
 Route::get('blog','App\Http\Controllers\Web\PageController@blog')->name('blog');
+Route::get('blog/{slug}','App\Http\Controllers\Web\PageController@post')->name('post');
