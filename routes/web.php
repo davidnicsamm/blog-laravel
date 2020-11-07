@@ -20,5 +20,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/','blog');
 Auth::routes();
+
+//web routes
 Route::get('blog','App\Http\Controllers\Web\PageController@blog')->name('blog');
 Route::get('blog/{slug}','App\Http\Controllers\Web\PageController@post')->name('post');
+
+Route::get('categoria/{slug}','App\Http\Controllers\Web\PageController@category')->name('category');
+Route::get('etiqueta/{slug}','App\Http\Controllers\Web\PageController@tag')->name('tag');
+
+
+
+
+
+//admin routes

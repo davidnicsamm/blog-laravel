@@ -13,7 +13,10 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        factory(App\Category::class,20)->create();
+        
+         \App\Models\Category::factory()->count(20)->create();
+        // \App\Database\Factories\Category::factory()->count(20)->create();
+
+        // factory()->create(App\Models\Category::class,20)->create();
     }
 }

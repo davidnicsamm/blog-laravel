@@ -17,7 +17,7 @@
                 <div class="card-body">  
                     <h5 class="card-title">
                        Categoría
-                       <a href="#">{{ $post->category->name }}</a>
+                       <a href="{{ route('category',$post->category->slug) }}">{{ $post->category->name }}</a>
                     </h5>           
 
                     <p clss="card-text">{{ $post->excerpt }}</p>
@@ -26,8 +26,8 @@
                     <hr>
                     Etiquetas
                     @foreach($post->tags as $tag)
-                        <a href="#"> {{ $tag->name }} </a>
-                        
+                        <a href="{{ route('tag',$tag->slug) }}"> {{ $tag->name }} </a>
+
                     @endforeach
                   
                 </div>
