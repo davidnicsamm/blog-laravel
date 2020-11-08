@@ -33,3 +33,6 @@ Route::get('etiqueta/{slug}','App\Http\Controllers\Web\PageController@tag')->nam
 
 
 //admin routes
+Route::resource('tags','App\Http\Controllers\Admin\TagController');
+Route::resource('categories','App\Http\Controllers\Admin\CategoryController');
+Route::resource('posts','App\Http\Controllers\Admin\PostController');
