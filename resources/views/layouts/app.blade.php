@@ -57,9 +57,9 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown"><a class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre href="{{  route('tags.index') }}">Etiquetas</a></li>
-                            <li class="nav-item dropdown"><a  class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre href="{{  route('categories.index') }}">Categorías</a></li>
-                            <li class="nav-item dropdown"><a  class="nav-link" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre href="{{  route('posts.index') }}">Entradas</a></li>
+                            <li class="nav-item dropdown"><a class="nav-link" role="button"  aria-haspopup="true" aria-expanded="false" v-pre href="{{  route('tags.index') }}">Etiquetas</a></li>
+                            <li class="nav-item dropdown"><a  class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre href="{{  route('categories.index') }}">Categorías</a></li>
+                            <li class="nav-item dropdown"><a  class="nav-link" role="button" aria-haspopup="true" aria-expanded="false" v-pre href="{{  route('posts.index') }}">Entradas</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
