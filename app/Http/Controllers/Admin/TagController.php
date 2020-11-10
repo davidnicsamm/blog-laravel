@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+/**Validación formulario */
+use App\Http\Requests\TagStoreRequest;
+use App\Http\Requests\TagUpdateRequest;
+/**Validación formulario */
+
 use App\Models\Tag;
 
 class TagController extends Controller
@@ -23,7 +28,7 @@ class TagController extends Controller
     {
         //Retornar todas las etiquetas.
         $tags = Tag::orderBy('id','DESC')->paginate();
-        dd($tags);
+       
         return view('admin.tags.index',compact('tags'));
         //compact('tags') Crea un array con la variable tags
     }
@@ -45,8 +50,9 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TagStoreRequest $request)    
     {
+        //Si la validación es correcta, se ejecuta el guardado.
         //Guarda los datos del formulario mostrado por create.
         $tag = Tag::create($request->all());
 
@@ -65,7 +71,7 @@ class TagController extends Controller
     {
         //Muestra el detalle de una etiqueta.
         $tag = Tag::find($id);
-        return view('admin.tags.show', compact('tag'))
+        return view('admin.tags.show', compact('tag'));
 
     }
 
@@ -79,7 +85,7 @@ class TagController extends Controller
     {
         //Editar el contenido de una etiqueta
         $tag = Tag::find($id);
-        return view('admin.tags.edit', compact('tag'))
+        return view('admin.tags.edit', compact('tag'));
     }
 
     /**
@@ -89,8 +95,11 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TagUpdateRequest $request, $id)
     {
+
+         //Si la validación es correcta, se ejecuta la modificación
+
         //Guarda las modificaciones ingresadas en edit.
         $tag = Tag::find($id);
         $tag->fill($request->all())->save();
