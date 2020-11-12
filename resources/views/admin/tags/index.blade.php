@@ -25,13 +25,19 @@
                                         <td>{{ $tag->id }}</td>
                                         <td>{{ $tag->name }}</td>
                                         <td width="10px">
-                                            <a href="{{ route('tags.show',$tag->id) }}" class="btn btn-sm btn-default">ver</a>
+                                            <a href="{{ route('tags.show',$tag->id) }}" class="btn btn-sm btn-default">Ver</a>
                                         </td>
                                         <td width="10px">
-                                            <a href="{{ route('tags.edit',$tag->id) }}" class="btn btn-sm btn-default">editar</a>
+                                            <a href="{{ route('tags.edit',$tag->id) }}" class="btn btn-sm btn-default">Editar</a>
                                         </td>
                                         <td width="10px">
-                                            <a href="#" class="btn btn-sm btn-default">eliminar</a>
+                                          {!! Form::open(['route' => ['tags.destroy',$tag->id],'method' => 'DELETE'])  !!}
+
+                                            <button class="btn btn-sm btn-danger">
+                                                Eliminar
+                                            </button>
+
+                                          {!! Form::close() !!}
                                         </td>
                                     </tr>
                                 @endforeach

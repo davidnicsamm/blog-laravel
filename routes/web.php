@@ -36,3 +36,6 @@ Route::get('etiqueta/{slug}','App\Http\Controllers\Web\PageController@tag')->nam
 Route::resource('tags','App\Http\Controllers\Admin\TagController');
 Route::resource('categories','App\Http\Controllers\Admin\CategoryController');
 Route::resource('posts','App\Http\Controllers\Admin\PostController');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
