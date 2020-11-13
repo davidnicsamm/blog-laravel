@@ -84,6 +84,45 @@
         </nav>
 
         <main class="py-4">
+
+            <!-- Mensaje informativo sobre acciones - mensaje contenido en la variable de sesión info -->
+            @if(session('info'))
+
+                <div class="container">
+                    <div class="row  justify-content-center">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="alert alert-success">
+                                {{ session('info') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
+            <!-- Mensaje de error - Si hay al menos un mensaje de error-->
+            @if(count($errors))
+                <div class="container">
+                    <div class="row  justify-content-center">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="alert alert-danger">
+                                <ul>
+                                
+                                    @foreach($errors->all() as $error)
+                                        <li>
+                                            {{ $error }}
+                                        </li>
+
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+
+
+
+
             @yield('content')
         </main>
     </div>
@@ -91,7 +130,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-
+    <!-- Incluir javascript de fotma personalizada -->
+    @yield('scripts')
     
 </body>
 </html>

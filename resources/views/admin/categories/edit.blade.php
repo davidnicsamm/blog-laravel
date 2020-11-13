@@ -7,13 +7,13 @@
             <div class="col-md-8 ">
                 <div class="card w-100 ">
                     <div class="card-header">
-                        Crear Etiqueta
+                        Editar Categoría
                         
                     </div>
                     <div class="card-body">
 
-                        {!! Form::open(['route' => 'tags.store']) !!}
-                            @include('admin.tags.partials.form')
+                        {!! Form::model($category, ['route' => [ 'categories.update',$category->id],'method' => 'PUT' ]) !!}
+                            @include('admin.categories.partials.form')
                         {!! Form::close()  !!}
                         
                     </div>

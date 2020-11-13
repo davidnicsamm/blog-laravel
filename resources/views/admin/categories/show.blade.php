@@ -7,14 +7,15 @@
             <div class="col-md-8 ">
                 <div class="card w-100 ">
                     <div class="card-header">
-                        Crear Etiqueta
+                        Ver Categoría
                         
                     </div>
                     <div class="card-body">
+                        <p><strong>Nombre: </strong>{{ $category->name }}</p>
+                        <p><strong>Slug: </strong>{{ $category->slug }}</p>
+                        <p><strong>Contenido: </strong>{{ $category->body }}</p>
 
-                        {!! Form::open(['route' => 'tags.store']) !!}
-                            @include('admin.tags.partials.form')
-                        {!! Form::close()  !!}
+                      
                         
                     </div>
 

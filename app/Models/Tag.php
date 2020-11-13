@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
-    protected $fileable = [
-        'name', 'slug',
-     ];
+    
+
+     protected $fillable = [
+        'name',
+        'slug',       
+    ];
  
        
      public function posts(){
